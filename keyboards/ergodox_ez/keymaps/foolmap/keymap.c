@@ -215,7 +215,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         clear_keyboard();
         layer_clear();
         layer_on(BASE);
-        rgb_matrix_disable_noeeprom();
+        rgb_matrix_sethsv_noeeprom(0, 0, 0);
         return false;
     }
   }
@@ -227,14 +227,15 @@ void matrix_init_user(void) {
 #ifdef RGBLIGHT_COLOR_LAYER_0
   rgblight_setrgb(RGBLIGHT_COLOR_LAYER_0);
 #endif
-  rgb_matrix_disable_noeeprom();
+  rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+  rgb_matrix_sethsv_noeeprom(0, 0, 0);
 };
 
 void oneshot_locked_mods_changed_user(uint8_t mods) {
   if (mods & MOD_MASK_SHIFT) {
-    rgb_matrix_enable_noeeprom();
+    rgb_matrix_sethsv_noeeprom(HSV_MAGENTA);
   } else if (!mods) {
-    rgb_matrix_disable_noeeprom();
+    rgb_matrix_sethsv_noeeprom(0, 0, 0);
   }
 }
 
