@@ -18,15 +18,57 @@
 #include "muse.h"
 
 enum preonic_layers {
-  _BASE = SAFE_RANGE,
+  _BASE,
   _LOWER,
   _RAISE,
   _ADJUST
 };
 
 enum preonic_keycodes {
-  LOWER = SAFE_RANGE,
-  RAISE,
+  BASE = SAFE_RANGE,
+  LOWER,
+  RAISE
+};
+
+enum unicode_names {
+    C_CDL_L,
+    C_CDL_U,
+	G_BRV_L,
+    G_BRV_U,
+    I_DLS_L,
+    I_DAB_U,
+    O_DIA_L,
+    O_DIA_U,
+    S_CDL_L,
+    S_CDL_U,
+    U_DIA_L,
+    U_DIA_U,
+};
+
+#define XP_C XP(C_CDL_L, C_CDL_U)
+#define XP_G XP(G_BRV_L, G_BRV_U)
+#define XP_I XP(I_DLS_L, I_DAB_U)
+#define XP_O XP(O_DIA_L, O_DIA_U)
+#define XP_S XP(S_CDL_L, S_CDL_U)
+#define XP_U XP(U_DIA_L, U_DIA_U)
+
+const uint32_t PROGMEM unicode_map[] = {
+//keycode 41 = u U U00fc U00dc
+//keycode 42 = i I U0131 U0130
+//keycode 47 = s S U015f U015e
+//keycode 39 = o O U00f6 U00d6
+    [C_CDL_L] = 0x00e7, // ç
+    [C_CDL_U] = 0x00c7, // Ç
+	[G_BRV_L] = 0x011f, // ğ
+    [G_BRV_U] = 0x011e, // Ğ
+    [I_DLS_L] = 0x0131, // ı
+    [I_DAB_U] = 0x0130, // İ
+    [O_DIA_L] = 0x00f6, // ö
+    [O_DIA_U] = 0x00d6, // Ö
+    [S_CDL_L] = 0x015F, // ş
+    [S_CDL_U] = 0x015E, // Ş
+    [U_DIA_L] = 0x00fc, // ü
+    [U_DIA_U] = 0x00dc, // Ü
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -44,12 +86,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Brite| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
-[_QWERTY] = LAYOUT_preonic_grid(
+[_BASE] = LAYOUT_preonic_grid(
   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_TILD, KC_GRV,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
   KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_ESC,  KC_BSPC, KC_F,    KC_G,    KC_C,    KC_R,    KC_L,
   KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_TAB,  KC_ENT,  KC_D,    KC_H,    KC_T,    KC_N,    KC_S,
   KC_SCLN, KC_Q, KC_J, KC_K, KC_X, OSM(MOD_LSFT), OSM(MOD_RSFT), KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,
-  OSL(2), OSM(MOD_LGUI), OSM(MOD_LALT), OSM(MOD_LCTL), OSL(1), KC_SPC, KC_SPC, OSL(1), OSM(MOD_RCTL), OSM(MOD_RALT), OSM(MOD_RGUI), OSL(2)
+  TO(2), OSL(2), OSM(MOD_LALT), OSM(MOD_LCTL), OSL(1), KC_SPC, KC_SPC, OSL(1), OSM(MOD_RCTL), OSM(MOD_RALT), OSL(2), TO(2)
 ),
 
 
@@ -67,11 +109,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_preonic_grid(
-  KC_BTN3, KC_ACL2, KC_ACL1, KC_ACL0, KC_BTN2, KC_WH_D, KC_WH_U, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
+  KC_BTN3, KC_ACL2, KC_ACL1, KC_ACL0, KC_BTN2, RESET,   RESET, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
   KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, _______, _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN,
   KC_LCBR, KC_RCBR, KC_LPRN, KC_RPRN, KC_EQL,  _______, _______, KC_SLSH, KC_MINS, KC_UNDS, KC_LBRC, KC_RBRC,
   KC_HOME, KC_PGUP, KC_TILD, KC_PIPE, KC_GRV,  _______, _______, KC_BSLS, KC_PLUS, KC_DEL,  KC_INS,  _______,
-  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+  _______, _______, _______, _______, OSL(3),  _______, _______, OSL(3), _______, _______, _______, _______
 ),
 
 /* Raise
@@ -88,34 +130,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_preonic_grid(
-  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    _______, _______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
-  KC_HOME, KC_PGUP, KC_PGDN, KC_END,  KC_INS,  _______, _______, KC_DEL,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
-  KC_MSTP, KC_MPRV, KC_MNXT, KC_MSEL, KC_SLSH, _______, _______, KC_SLSH, KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY,
-  _______, _______, _______, _______, TO(0),   TO(1),   TO(1),   TO(0),   _______, _______, RESET, _______
+  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_TILD, KC_GRV,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
+  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_ESC,  KC_BSPC, KC_F,    XP_G,    XP_C,    KC_R,    KC_L,
+  KC_A,    XP_O,    KC_E,    XP_U,    XP_I,    KC_TAB,  KC_ENT,  KC_D,    KC_H,    KC_T,    KC_N,    XP_S,
+  KC_SCLN, KC_Q, KC_J, KC_K, KC_X, OSM(MOD_LSFT), OSM(MOD_RSFT), KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,
+  TO(0), TO(0), _______, _______, _______,   _______,   _______,   _______,   _______, _______, TO(0), TO(0)
 ),
 
-/* Adjust (Lower + Raise)
- * ,-----------------------------------------------------------------------------------.
- * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      | Reset|      |      |      |      |      |      |      |      |      |  Del |
- * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |      |      |Aud on|AudOff|AGnorm|AGswap|Qwerty|Colemk|Dvorak|      |      |
- * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |Voice-|Voice+|Mus on|MusOff|MidiOn|MidOff|      |      |      |      |      |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |             |      |      |      |      |      |
- * `-----------------------------------------------------------------------------------'
- */
 [_ADJUST] = LAYOUT_preonic_grid(
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
   _______, RESET,   _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL,
-  _______, _______, _______, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, _______, _______, DVORAK,  _______, _______,
+  _______, _______, _______, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, _______, _______, _______, _______, _______,
   _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______,
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-)
-
+ )
 
 };
 
