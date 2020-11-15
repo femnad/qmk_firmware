@@ -33,7 +33,7 @@ enum preonic_keycodes {
 enum unicode_names {
     C_CDL_L,
     C_CDL_U,
-	G_BRV_L,
+    G_BRV_L,
     G_BRV_U,
     I_DLS_L,
     I_DAB_U,
@@ -59,7 +59,7 @@ const uint32_t PROGMEM unicode_map[] = {
 //keycode 39 = o O U00f6 U00d6
     [C_CDL_L] = 0x00e7, // ç
     [C_CDL_U] = 0x00c7, // Ç
-	[G_BRV_L] = 0x011f, // ğ
+    [G_BRV_L] = 0x011f, // ğ
     [G_BRV_U] = 0x011e, // Ğ
     [I_DLS_L] = 0x0131, // ı
     [I_DAB_U] = 0x0130, // İ
@@ -134,7 +134,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_ESC,  KC_BSPC, KC_F,    XP_G,    XP_C,    KC_R,    KC_L,
   KC_A,    XP_O,    KC_E,    XP_U,    XP_I,    KC_TAB,  KC_ENT,  KC_D,    KC_H,    KC_T,    KC_N,    XP_S,
   KC_SCLN, KC_Q, KC_J, KC_K, KC_X, OSM(MOD_LSFT), OSM(MOD_RSFT), KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,
-  TO(0), TO(0), _______, _______, _______,   _______,   _______,   _______,   _______, _______, TO(0), TO(0)
+  TO(0), OSL(0), _______, _______, _______,   _______,   _______,   _______,   _______, _______, OSL(0), TO(0)
 ),
 
 [_ADJUST] = LAYOUT_preonic_grid(
