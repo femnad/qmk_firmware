@@ -134,7 +134,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_ESC,  KC_BSPC, KC_F,    XP_G,    XP_C,    KC_R,    KC_L,
   KC_A,    XP_O,    KC_E,    XP_U,    XP_I,    KC_TAB,  KC_ENT,  KC_D,    KC_H,    KC_T,    KC_N,    XP_S,
   KC_SCLN, KC_Q, KC_J, KC_K, KC_X, OSM(MOD_LSFT), OSM(MOD_RSFT), KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,
-  TO(0), OSL(0), _______, _______, _______,   _______,   _______,   _______,   _______, _______, OSL(0), TO(0)
+  TO(0), TO(0), _______, _______, _______,   _______,   _______,   _______,   _______, _______, TO(0), TO(0)
 ),
 
 [_ADJUST] = LAYOUT_preonic_grid(
