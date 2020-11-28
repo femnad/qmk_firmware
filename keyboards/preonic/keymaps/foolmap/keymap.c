@@ -30,46 +30,19 @@ enum preonic_keycodes {
   RAISE
 };
 
-enum unicode_names {
-    C_CDL_L,
-    C_CDL_U,
-    G_BRV_L,
-    G_BRV_U,
-    I_DLS_L,
-    I_DAB_U,
-    O_DIA_L,
-    O_DIA_U,
-    S_CDL_L,
-    S_CDL_U,
-    U_DIA_L,
-    U_DIA_U,
-};
+#define C_CDL_L UC(0x00e7) // ç
+#define G_BRV_L UC(0x011f) // ğ
+#define I_DLS_L UC(0x0131) // ı
+#define O_DIA_L UC(0x00f6) // ö
+#define S_CDL_L UC(0x015F) // ş
+#define U_DIA_L UC(0x00fc) // ü
 
-#define XP_C XP(C_CDL_L, C_CDL_U)
-#define XP_G XP(G_BRV_L, G_BRV_U)
-#define XP_I XP(I_DLS_L, I_DAB_U)
-#define XP_O XP(O_DIA_L, O_DIA_U)
-#define XP_S XP(S_CDL_L, S_CDL_U)
-#define XP_U XP(U_DIA_L, U_DIA_U)
-
-const uint32_t PROGMEM unicode_map[] = {
-//keycode 41 = u U U00fc U00dc
-//keycode 42 = i I U0131 U0130
-//keycode 47 = s S U015f U015e
-//keycode 39 = o O U00f6 U00d6
-    [C_CDL_L] = 0x00e7, // ç
-    [C_CDL_U] = 0x00c7, // Ç
-    [G_BRV_L] = 0x011f, // ğ
-    [G_BRV_U] = 0x011e, // Ğ
-    [I_DLS_L] = 0x0131, // ı
-    [I_DAB_U] = 0x0130, // İ
-    [O_DIA_L] = 0x00f6, // ö
-    [O_DIA_U] = 0x00d6, // Ö
-    [S_CDL_L] = 0x015F, // ş
-    [S_CDL_U] = 0x015E, // Ş
-    [U_DIA_L] = 0x00fc, // ü
-    [U_DIA_U] = 0x00dc, // Ü
-};
+#define C_CDL_U UC(0x00c7) // Ç
+#define G_BRV_U UC(0x011e) // Ğ
+#define I_DAB_U UC(0x0130) // İ
+#define O_DIA_U UC(0x00d6) // Ö
+#define S_CDL_U UC(0x015E) // Ş
+#define U_DIA_U UC(0x00dc) // Ü
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -91,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_ESC,  KC_BSPC, KC_F,    KC_G,    KC_C,    KC_R,    KC_L,
   KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_TAB,  KC_ENT,  KC_D,    KC_H,    KC_T,    KC_N,    KC_S,
   KC_SCLN, KC_Q, KC_J, KC_K, KC_X, OSM(MOD_LSFT), OSM(MOD_RSFT), KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,
-  TO(2), OSL(2), OSM(MOD_LALT), OSM(MOD_LCTL), OSL(1), KC_SPC, KC_SPC, OSL(1), OSM(MOD_RCTL), OSM(MOD_RALT), OSL(2), TO(2)
+  OSL(3), OSL(2), OSM(MOD_LALT), OSM(MOD_LCTL), OSL(1), KC_SPC, KC_SPC, OSL(1), OSM(MOD_RCTL), OSM(MOD_RALT), OSL(2), OSL(3)
 ),
 
 
@@ -131,18 +104,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = LAYOUT_preonic_grid(
   KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_TILD, KC_GRV,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
-  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_ESC,  KC_BSPC, KC_F,    XP_G,    XP_C,    KC_R,    KC_L,
-  KC_A,    XP_O,    KC_E,    XP_U,    XP_I,    KC_TAB,  KC_ENT,  KC_D,    KC_H,    KC_T,    KC_N,    XP_S,
+  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_ESC,  KC_BSPC, KC_F,    G_BRV_L, C_CDL_L, KC_R,    KC_L,
+  KC_A,    O_DIA_L, KC_E,    U_DIA_L, I_DLS_L, KC_TAB,  KC_ENT,  KC_D,    KC_H,    KC_T,    KC_N, S_CDL_L,
   KC_SCLN, KC_Q, KC_J, KC_K, KC_X, OSM(MOD_LSFT), OSM(MOD_RSFT), KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,
-  TO(0), TO(0), _______, _______, _______,   _______,   _______,   _______,   _______, _______, TO(0), TO(0)
+  _______, _______, _______, _______, _______,   _______,   _______,   _______,   _______, _______, _______, _______
 ),
 
 [_ADJUST] = LAYOUT_preonic_grid(
-  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-  _______, RESET,   _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_DEL,
-  _______, _______, _______, AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, _______, _______, _______, _______, _______,
-  _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______,
-  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_TILD, KC_GRV,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
+  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_ESC,  KC_BSPC, KC_F,    G_BRV_U, C_CDL_U, KC_R,    KC_L,
+  KC_A,    O_DIA_U,    KC_E, U_DIA_U, I_DAB_U, KC_TAB,  KC_ENT,  KC_D,    KC_H,    KC_T,    KC_N,    S_CDL_U,
+  KC_SCLN, KC_Q, KC_J, KC_K, KC_X, OSM(MOD_LSFT), OSM(MOD_RSFT), KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,
+  _______, _______, _______, _______, _______,   _______,   _______,   _______,   _______, _______, _______, _______
  )
 
 };
