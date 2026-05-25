@@ -28,3 +28,4 @@
 [submodule "keyboards/preonic/keymaps/keyboards/preonic/keymaps/foolmap"]
 	path = keyboards/preonic/keymaps/keyboards/preonic/keymaps/foolmap
 	url = git@github.com:femnad/qmk-foolmap.git
+	branch = main
