@@ -27,4 +27,4 @@
 	branch = release/v8.2
 [submodule "keyboards/preonic/keymaps/foolmap"]
 	path = keyboards/preonic/keymaps/foolmap
-	url = git@github.com:femnad/qmk-foolmap.git
+	url = https://github.com/femnad/qmk-foolmap.git
