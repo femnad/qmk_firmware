@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, LSFT(KC_1), LSFT(KC_2), LSFT(KC_3), LSFT(KC_4), LSFT(KC_5), LSFT(KC_6), LSFT(KC_7), LSFT(KC_8), LSFT(KC_9), LSFT(KC_0), KC_TRNS,
     CLEAR , LSFT(KC_LBRC), LSFT(KC_RBRC), LSFT(KC_9), LSFT(KC_0), KC_EQUAL, KC_SLASH, KC_MINUS, LSFT(KC_MINUS), KC_LBRC, KC_RBRC, CLEAR,
     KC_TRNS, KC_TRNS, KC_TRNS, LSFT(KC_GRAVE), LSFT(KC_BSLS), KC_GRAVE, KC_TRNS, KC_TRNS, KC_BSLS, LSFT(KC_EQUAL), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-                      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO(3) , KC_TRNS, KC_TRNS, KC_TRNS,
+                      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, CW_TOGG, CW_TOGG, MO(3) , KC_TRNS, KC_TRNS, KC_TRNS,
                     //Left Encoder Press                                           Right Encoder Press
                             KC_MUTE,                                                         KC_MPLY
   ),
