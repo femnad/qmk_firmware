@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             KC_MUTE,                                                         KC_MPLY
   ),
   [3] = LAYOUT(
-    KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO,
+    KC_NO , BL_TOGG, BL_DOWN, BL_UP , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO,
     QK_BOOT, KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , QK_BOOT, KC_NO , KC_NO , KC_NO , KC_NO , KC_NO,
     RM_TOGG, RM_HUEU, RM_SATU, RM_VALU, KC_NO , KC_NO , KC_NO , KC_VOLD, KC_MUTE, KC_VOLU, KC_NO , KC_NO,
     RM_NEXT, RM_HUED, RM_SATD, RM_VALD, KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_MPRV, KC_MPLY, KC_MNXT, KC_NO , KC_NO,
