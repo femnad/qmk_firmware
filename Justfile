@@ -4,7 +4,7 @@ default:
 fetch:
     #!/usr/bin/env bash
     set -euo pipefail
-    for dir in preonic keebio/nyquist_lm
+    for dir in preonic keebio/nyquist_lm mechboards/sofle/r2g
     do
         git submodule update --remote keyboards/${dir}/keymaps/foolmap
         git add keyboards/${dir}/keymaps/foolmap
