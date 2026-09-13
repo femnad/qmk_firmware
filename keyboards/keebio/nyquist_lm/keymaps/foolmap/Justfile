@@ -1,0 +1,11 @@
+default:
+    @just --choose
+
+compile:
+    qmk compile -kb keebio/nyquist_lm/rev1 -km foolmap
+
+flash:
+    qmk flash -kb keebio/nyquist_lm/rev1 -km foolmap
+
+update:
+    uno qmk layout nyquist-lm

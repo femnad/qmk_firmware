@@ -1,0 +1,11 @@
+default:
+    @just --choose
+
+compile:
+    qmk compile -kb mechboards/sofle/r2g -km foolmap
+
+flash:
+    ./flash.sh
+
+update:
+    uno qmk layout sofle

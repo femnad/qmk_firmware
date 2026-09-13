@@ -1,0 +1,77 @@
+header_definitions:
+  mk_3_speed:
+  mk_c_offset_0: 8
+  mk_c_offset_1: 16
+  mk_c_offset_2: 32
+  mk_w_interval_0: 120
+  mk_w_interval_1: 80
+  mk_w_interval_2: 40
+  oneshot_tap_toggle: 2
+  oneshot_timeout: 3000
+  chordal_hold:
+  flow_tap_term: 150
+  quick_tap_term_per_key:
+  retro_tapping:
+  tapping_term: 250
+
+custom_keys:
+  - clear
+
+mode_tap_term: 350
+
+custom_definitions:
+  diag_b: mt(mod_rsft, kc_b)
+  diag_x: mt(mod_lsft, kc_x)
+  home_e: mt(mod_lalt, kc_e)
+  home_h: mt(mod_rctl, kc_h)
+  home_n: mt(mod_rgui, kc_n)
+  home_o: mt(mod_lgui, kc_o)
+  home_t: mt(mod_ralt, kc_t)
+  home_u: mt(mod_lctl, kc_u)
+  indx_i: lt(indx, kc_i)
+  indx_d: lt(indx, kc_d)
+  spac_i: lt(indx, kc_space)
+  caps_word_left_index: 28
+  caps_word_right_index: 55
+  indx_osl_left_index: 26
+  indx_osl_right_index: 57
+  left_shift_index: 18
+  right_shift_index: 53
+  move_osl_left_index: 27
+  move_osl_right_index: 56
+  symb_osl_left_index: 29
+  symb_osl_right_index: 54
+
+
+rules:
+  caps_word_enable: yes
+  command_enable: no
+  console_enable: no
+  oryx_enable: no
+  webusb_enable: no
+
+layouts:
+  base:
+    - 1               2               3               4               5               clear           clear           6               7               8               9               0
+    - quot            comm            dot             p               y               esc             bspc            f               g               c               r               l
+    - a               home_o          home_e          home_u          indx_i          tab             ent             indx_d          home_h          home_t          home_n          s
+    - scln            q               j               k               diag_x          osm(lsft)       osm(rsft)       diag_b          m               w               v               z
+    - mute            mply            osl(indx)       osl(move)       spac_i          osl(symb)       osl(symb)       spac_i          osl(move)       osl(indx)       vold            volu
+  symb:
+    - f1              f2              f3              f4              f5              _               _               f6              f7              f8              f9              f10
+    - exlm            at              hash            dlr             perc            _               _               circ            ampr            astr            f11             f12
+    - lcbr            rcbr            lprn            rprn            eql             _               _               slsh            mins            unds            lbrc            rbrc
+    - _               _               tild            pipe            grv             _               _               ques            bsls            plus            ins             del
+    - _               _               _               _               cw_togg         _               _               cw_togg         _               _               _               _
+  move:
+    - _               _               _               _               _               _               _               _               _               _               _               _
+    - _               _               ms_up           _               ms_whlu         _               _               ms_btn5         ms_acl0         ms_acl1         ms_acl2         _
+    - _               ms_left         ms_down         ms_rght         ms_whld         _               _               ms_btn4         ms_btn1         ms_btn3         ms_btn2         _
+    - qk_boot         rm_togg         rm_prev         rm_next         _               _               _               rctl(rgui(q))   _               rm_vald         rm_valu         qk_boot
+    - _               _               _               _               _               _               _               _               _               _               _               _
+  indx:
+    - _               _               _               _               _               _               _               _               _               ms_btn3         _               _
+    - _               rctl(home)      pgup            rctl(end)       esc             _               _               bspc            ms_btn1         up              ms_btn2         _
+    - _               home            pgdn            end             tab             _               _               ent             left            down            right           _
+    - _               rsft(tab)       rctl(rsft(pgup)) rctl(rsft(pgdn)) _             _               _               _               rctl(rsft(tab)) rctl(tab)       _               _
+    - _               _               _               _               _               _               _               _               _               _               _               _

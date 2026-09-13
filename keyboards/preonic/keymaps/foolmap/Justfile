@@ -1,0 +1,11 @@
+default:
+    @just --choose
+
+compile:
+    qmk compile -kb preonic/rev3_drop -km foolmap
+
+flash:
+    qmk flash -kb preonic/rev3_drop -km foolmap
+
+update:
+    uno qmk layout preonic
