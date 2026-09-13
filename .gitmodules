@@ -31,3 +31,6 @@
 [submodule "keyboards/keebio/nyquist_lm/keymaps/foolmap"]
 	path = keyboards/keebio/nyquist_lm/keymaps/foolmap
 	url = git@github.com:femnad/qmk-nyquist-lm-foolmap.git
+[submodule "keyboards/mechboards/sofle/r2g/keymaps/foolmap"]
+	path = keyboards/mechboards/sofle/r2g/keymaps/foolmap
+	url = git@github.com:femnad/qmk-sofle-r2g-foolmap.git
