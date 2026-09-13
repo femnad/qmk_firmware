@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * +---------+---------+---------+---------+---------+---------+                   +---------+---------+---------+---------+---------+---------+
  * |         |         | MS_BTN2 | MS_BTN3 | MS_BTN1 | MS_BTN4 |                   | MS_WHLD | MS_RGHT | MS_DOWN | MS_LEFT | BL_DOWN |         |
  * +---------+---------+---------+---------+---------+---------+                   +---------+---------+---------+---------+---------+---------+
- * |         | QK_BOOT | RM_TOGG | RM_PREV | RM_NEXT |         |         |         |RCTL(RGUI|         | RM_VALD | RM_VALU | QK_BOOT |         |
+ * |         | QK_BOOT | RM_TOGG | RM_PREV | RM_NEXT |RCTL(RGUI|         |         | MS_WHLL | MS_WHLR | RM_VALD | RM_VALU | QK_BOOT |         |
  * +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
  *                     |         |         |         |         |         |         |         |         |         |         |
  *                     +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
@@ -101,7 +101,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, BL_UP, BL_TOGG, MS_UP, _______, MS_WHLU, MS_BTN5, MS_ACL0, MS_ACL1, MS_ACL2, _______, _______,
         _______, BL_DOWN, MS_LEFT, MS_DOWN, MS_RGHT, MS_WHLD, MS_BTN4, MS_BTN1, MS_BTN3, MS_BTN2, _______, _______,
-        _______, QK_BOOT, RM_TOGG, RM_PREV, RM_NEXT, _______, _______, _______, RCTL(RGUI(KC_Q)), _______, RM_VALD, RM_VALU, QK_BOOT, _______,
+        _______, QK_BOOT, RM_TOGG, RM_PREV, RM_NEXT, RCTL(RGUI(KC_Q)), _______, _______, MS_WHLL, MS_WHLR, RM_VALD, RM_VALU, QK_BOOT, _______,
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
         _______, _______
 ),

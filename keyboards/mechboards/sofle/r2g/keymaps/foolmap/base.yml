@@ -68,7 +68,7 @@ layouts:
     - _               _               _               _               _               _                                    _               _               _               _               _              _
     - _               bl_up           bl_togg         ms_up           _               ms_whlu                              ms_btn5         ms_acl0         ms_acl1         ms_acl2         _              _
     - _               bl_down         ms_left         ms_down         ms_rght         ms_whld                              ms_btn4         ms_btn1         ms_btn3         ms_btn2         _              _
-    - _               qk_boot         rm_togg         rm_prev         rm_next         _               _               _    rctl(rgui(q))   _               rm_vald         rm_valu         qk_boot        _
+    - _               qk_boot         rm_togg         rm_prev         rm_next         rctl(rgui(q))   _               _    ms_whll         ms_whlr         rm_vald         rm_valu         qk_boot        _
     -                                 _               _               _               _               _               _    _               _               _               _
     -                                                                                                 _               _
   indx:
