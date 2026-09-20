@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * +---------+---------+---------+---------+---------+---------+                   +---------+---------+---------+---------+---------+---------+
  * |         |  RBRC   |  LBRC   |  UNDS   |  MINS   |  SLSH   |                   |   EQL   |  RPRN   |  LPRN   |  RCBR   |  LCBR   |         |
  * +---------+---------+---------+---------+---------+---------+                   +---------+---------+---------+---------+---------+---------+
- * |         |         |         |  TILD   |  PIPE   |   GRV   |         |         |  QUES   |  BSLS   |  PLUS   |   INS   |   DEL   |         |
+ * |         |         |         |  TILD   |  PIPE   |   GRV   |         |         |  BSLS   |  PLUS   |  QUES   |   INS   |   DEL   |         |
  * +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
  *                     |         |         |         | CW_TOGG |         |         | CW_TOGG |         |         |         |
  *                     +---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, _______,
         _______, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_F11, KC_F12, _______,
         _______, KC_LCBR, KC_RCBR, KC_LPRN, KC_RPRN, KC_EQL, KC_SLSH, KC_MINS, KC_UNDS, KC_LBRC, KC_RBRC, _______,
-        _______, _______, _______, KC_TILD, KC_PIPE, KC_GRV, _______, _______, KC_QUES, KC_BSLS, KC_PLUS, KC_INS, KC_DEL, _______,
+        _______, _______, _______, KC_TILD, KC_PIPE, KC_GRV, _______, _______, KC_BSLS, KC_PLUS, KC_QUES, KC_INS, KC_DEL, _______,
         _______, _______, _______, CW_TOGG, _______, _______, CW_TOGG, _______, _______, _______,
         _______, _______
 ),
